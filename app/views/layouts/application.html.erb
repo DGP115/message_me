@@ -16,7 +16,14 @@
     <%= render 'layouts/navbar' %>
 
     <div class="ui container">
+      <div class="ui two column centered grid">
+        <div class="column">
+          <%= render 'layouts/messages' %>
+        </div>
+      </div>
+
       <%= yield %>
+
     </div>
 
   </body>

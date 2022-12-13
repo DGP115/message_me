@@ -42,6 +42,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.4.0'
+#gem 'jquery-rails'
 
 # Use Sass to process CSS
 gem 'sassc-rails'

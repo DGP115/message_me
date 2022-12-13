@@ -5,32 +5,44 @@
   <i class="blue power off icon"></i>
   Let's get started...
 </h3>
-<h4 class="ui center aligned header">
-  Create a username and password
-</h4>
+<br>
 
-<%= form_with(model: @user, local: true) do |f| %>
-  <div class="ui centered padded grid">
-    <div class="eight wide column">
-      <div class="ui red raised segment">
-        <form class="ui form">
-          <div class="field">
-            <label>Username:</label>
-            <div class="ui input focus">
-              <%= f.text_field :username, placeholder: "enter a username" %>
+
+<%= form_with(model: @user) do |f| %>
+  <div class="ui eight column centered grid">
+    <div class="six wide column">
+      <div class="ui raised segments">
+        <div class="ui segment">
+          <h4 class="ui left aligned header">
+            Create a username and password
+          </h4>
+        </div>
+        <div class="ui basic segments">
+
+          <div class="ui left aligned basic segment">
+            <%= f.label "Username:" %>
+            <div class="ui fluid left icon input">
+              <i class="user icon"></i>
+              <%= f.text_field :username,  placeholder: "enter a username" %>
             </div>
           </div>
 
-          <div class="field">
-            <label>Password:</label>
-            <%= f.password_field :password %>
+          <div class="ui left aligned basic segment">
+            <%= f.label "Password:" %>
+            <div class="ui fluid left icon input">
+              <i class="lock icon"></i>
+              <%= f.password_field :password %>
+            </div>
           </div>
 
-          <button class="ui red button">
-            <%= f.submit(@user.new_record? ? "Sign up" : "Update Profile") %>
-          </button>
-        </form>
+          <div class="ui center aligned basic segment">
+            <%= f.submit "Sign up", class: "ui red button" %>
+          </div>
+
+        </div>
+
       </div>
-    </div>
+   </div>
   </div>
+
 <% end %>
