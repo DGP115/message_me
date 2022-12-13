@@ -4,7 +4,5 @@
 class PagesController < ApplicationController
   def home; end
 
-  def about
-    #  Comment to satisfy rubocop
-  end
+  def about; end
 end

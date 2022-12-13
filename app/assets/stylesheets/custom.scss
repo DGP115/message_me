@@ -1,0 +1,32 @@
+/*==================== Clearfix ====================
+Recall that floats enable content to wrap around other content.
+While sometimes good, we need a way to turn it off in the CSS cascade and layout
+The "group" class below clears floats
+*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+/*==================== Typography ====================*/
+
+cite, em {
+  font-style: italic;
+}
+.inline-block {
+display: inline-block;
+}
+
+/*==================== Page items ====================*/
+.chatbox {
+  height: 450px
+}
+
+

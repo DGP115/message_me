@@ -1,1 +1,46 @@
-<h1>This is the Signup page</h1>
+<h2 class="ui center aligned header">
+  Welcome to MessageMe <i class="inline-block red fitted coffee icon"></i> - a Chat App
+</h2>
+<h3 class="ui center aligned header">
+  <i class="blue power off icon"></i>
+  Let's get started...
+</h3>
+
+
+<div class="ui placeholder segment">
+  <div class="ui two column very relaxed stackable grid">
+    <div class="column">
+      <div class="ui form">
+        <div class="field">
+          <label>Username</label>
+          <div class="ui left icon input">
+            <input type="text" placeholder="Username">
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="ui left icon input">
+            <input type="password">
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <div class="ui red submit button">Login</div>
+      </div>
+    </div>
+    <div class="middle aligned column">
+      <div class="ui big red button">
+        <i class="signup icon"></i>
+        Sign Up
+      </div>
+        <a class="link item">
+            <%= link_to "Sign up", signup_path, class: "red active item" %>
+        </a>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    Or
+  </div>
+</div>
+
+
