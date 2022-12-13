@@ -42,10 +42,13 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.4.0'
-#gem 'jquery-rails'
+# gem 'jquery-rails'
 
 # Use Sass to process CSS
 gem 'sassc-rails'
+
+# Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output
+gem 'hirb', '~> 0.7.3'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem 'image_processing', '~> 1.2'
