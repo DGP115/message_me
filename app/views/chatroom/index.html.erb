@@ -1,26 +1,38 @@
 <h4 class="ui center aligned icon header">
   <i class="circular red coffee icon"></i>
-  Say something
+  Say something !
 </h4>
+
 <div class="ui stackable two column grid">
+
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-     <div class="content">
+
+      <div class="apple_pagination">
+        <%= will_paginate @messages, :container => false %>
+      </div>
+
+      <div class="content">
         <div class="ui feed">
+
           <h4 class="ui horizontal divider header">
             Messages
           </h4>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <span class="em"><em>Elliot Fu</em></span> test message
+
+          <% @messages.each do |message| %>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <em><%= message.user.username %>:  </em>
+                  <%= message.body %>
+                </div>
               </div>
             </div>
-          </div>
-
+          <% end %>
 
         </div>
       </div>
+
       <div class="extra content">
         <form class="ui form">
           <div class="field">
@@ -33,6 +45,7 @@
           </div>
         </form>
       </div>
+
     </div>
   </div>
 

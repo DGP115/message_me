@@ -50,6 +50,9 @@ gem 'sassc-rails'
 # Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output
 gem 'hirb', '~> 0.7.3'
 
+# Enable pagination
+gem 'will_paginate', '~> 3.3', '>= 3.3.1'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem 'image_processing', '~> 1.2'
 

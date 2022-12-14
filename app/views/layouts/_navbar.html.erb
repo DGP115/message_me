@@ -10,15 +10,20 @@
       <div class="ui dropdown item">
         Account<i class="dropdown icon"></i>
         <div class="menu">
-
-          <%= link_to "Log in",   login_path, class: "item" %>
-          <%= link_to "Log out",  logout_path, class: "item",
-                                  data: { "turbo-method": :delete } %>
+          <% if !logged_in? %>
+            <%= link_to "Log in",   login_path, class: "item" %>
+          <% end %>
+          <% if logged_in? %>
+            <%= link_to "Log out",  logout_path, class: "item",
+                                    data: { "turbo-method": :delete } %>
+          <% end %>
 
         </div>
       </div>
       <div class="item">
-        <%= link_to "Sign up", signup_path, class: "ui primary button" %>
+        <% if !current_user %>
+          <%= link_to "Sign up", signup_path, class: "ui primary button" %>
+        <% end %>
       </div>
       <div class="link item">
         <%= link_to "About", about_path, class: "ui inverted primary button" %>
