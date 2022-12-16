@@ -5,6 +5,7 @@ class ChatroomController < ApplicationController
   before_action :require_user
 
   def index
-    @messages = Message.paginate(page: params[:page], per_page: 12).order('created_at DESC')
+    @message = Message.new
+    @messages = Message.custom_fetch
   end
 end

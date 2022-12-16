@@ -8,27 +8,31 @@
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
 
-      <div class="content" id="scrollbarhere" data-controller="scroll">
+      <div class="content">
         <div class="ui feed" id="message-container">
 
           <h4 class="ui horizontal divider header">
             Messages
           </h4>
 
-          <!--  Recall the below is a bit of Rails magic.
-                It loops through @messages.each and renders the partial "_message"
-                found, by convention, in the folder given by the model name, so "messages" in this case-->
-          <%= render @messages %>
+          <% @messages.each do |message| %>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <em><%= message.user.username %>:  </em>
+                  <%= message.body %>
+                </div>
+              </div>
+            </div>
+          <% end %>
 
         </div>
       </div>
 
       <%= form_with(model: @message, method: :post, url: message_path, remote: true,
-                    class: "ui reply form",
-                    data: { controller: "reset-form",
-                            action: "turbo:submit-end->reset-form#reset" }) do |f| %>
-
+                    class: "ui reply form") do |f| %>
         <div class="extra content">
+
             <div class="field">
               <div class="ui fluid icon">
                 <div class="ui fluid icon input">
@@ -37,8 +41,8 @@
                 </div>
               </div>
             </div>
-        </div>
 
+        </div>
       <% end %>
 
     </div>

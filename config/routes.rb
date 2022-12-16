@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Routes for User actions
   get 'signup', to: 'users#new'
   # resources :users, only: %i[show index create edit update destroy]
-  resources :users, only: %i[create]
+  resources :users, only: %i[create edit update show]
 
   # Login actions - to be managed by the sessions controller
   # 1.  When (a signed up) user clicks log in, initiate a new session
@@ -27,4 +27,10 @@ Rails.application.routes.draw do
 
   # Chatroom routes
   get 'chatroom', to: 'chatroom#index'
+
+  # Message routes
+  post 'message', to: 'messages#create'
+
+  #  ActionCable routes
+  mount ActionCable.server, at: '/cable'
 end

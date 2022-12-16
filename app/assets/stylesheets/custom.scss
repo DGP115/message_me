@@ -26,7 +26,11 @@ display: inline-block;
 
 /*==================== Page items ====================*/
 .chatbox {
-  height: 450px
+  height: 430px
+}
+
+#scrollbarhere {
+  overflow: auto;
 }
 
 /*==================== Pagination ====================*/

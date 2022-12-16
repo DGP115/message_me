@@ -3,17 +3,18 @@
 </h2>
 <h3 class="ui center aligned header">
   <i class="blue power off icon"></i>
-  Let's get started...
+  Let's re-invent yourself...
 </h3>
 <br>
 
-<%= form_with(model: @user, local: true) do |f| %>
+
+<%= form_with(model: @user, local: true, url: user_path) do |f| %>
   <div class="ui eight column centered grid">
     <div class="six wide column">
       <div class="ui raised segments">
         <div class="ui segment">
           <h4 class="ui left aligned header">
-            Create a username and password
+            Who are you?
           </h4>
         </div>
         <div class="ui basic segments">
@@ -35,8 +36,8 @@
           </div>
 
           <div class="ui center aligned basic segment">
-            <%= f.submit(@user.new_record? ? "Sign up" : "Update Profile"),
-                        class: "ui red button" %>
+            <%= f.submit "Update", class: "ui red button" %>
+            <%= link_to "Cancel", chatroom_path, class: "ui red basic button" %>
           </div>
 
         </div>

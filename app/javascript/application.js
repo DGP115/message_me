@@ -4,6 +4,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import * as jQuery from 'jquery'
 import 'semantic-ui'
+import "channels"
 
 $(document).on('turbo:load', function() {
   $('.ui.dropdown').dropdown();
@@ -11,4 +12,7 @@ $(document).on('turbo:load', function() {
     $(this).closest('.message').transition('fade');
   });
 })
+
+
+
 
